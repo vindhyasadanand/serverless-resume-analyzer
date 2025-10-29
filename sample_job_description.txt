@@ -1,0 +1,78 @@
+Python Backend Developer
+Tech Solutions Inc. - San Francisco, CA (Remote Available)
+Full-Time | Mid-Level | $90,000 - $120,000
+
+ABOUT THE ROLE
+We are seeking a talented Python Backend Developer to join our growing engineering team. You will be responsible for developing and maintaining serverless applications, building REST APIs, and implementing machine learning solutions for our cloud-based platform.
+
+REQUIRED QUALIFICATIONS
+• Bachelor's degree in Computer Science, Software Engineering, or related field
+• 2+ years of professional experience with Python development
+• Strong expertise in web frameworks such as Flask or Django
+• Experience with AWS services including Lambda, S3, and DynamoDB
+• Proficiency in building and consuming RESTful APIs
+• Knowledge of machine learning concepts and NLP techniques
+• Experience with scikit-learn, Pandas, and NumPy
+• Understanding of database systems (SQL and NoSQL)
+• Familiarity with Git version control and collaborative development
+• Strong problem-solving and analytical skills
+
+PREFERRED QUALIFICATIONS
+• Experience with React or other modern JavaScript frameworks
+• Knowledge of Docker and containerization technologies
+• Experience with CI/CD pipelines and DevOps practices
+• Familiarity with Agile/Scrum methodologies
+• Experience with spaCy, NLTK, or other NLP libraries
+• AWS certifications (Solutions Architect, Developer, etc.)
+• Experience with serverless architecture patterns
+• Knowledge of Redis or other caching technologies
+• Contributions to open-source projects
+• Experience with TensorFlow or PyTorch
+
+TECHNICAL SKILLS REQUIRED
+• Python 3.x
+• Flask or Django
+• AWS (Lambda, S3, DynamoDB, API Gateway, CloudWatch)
+• REST API development and integration
+• SQL (PostgreSQL, MySQL) and NoSQL (MongoDB, DynamoDB)
+• Machine Learning and Natural Language Processing
+• scikit-learn, Pandas, NumPy
+• Git and GitHub
+• Linux/Unix command line
+• Data structures and algorithms
+
+KEY RESPONSIBILITIES
+• Design, develop, and maintain serverless applications using AWS Lambda
+• Build scalable REST APIs for web and mobile applications
+• Implement machine learning models for text analysis and classification
+• Work with NLP libraries to process and analyze unstructured text data
+• Optimize application performance and database queries
+• Write clean, maintainable, and well-documented code
+• Collaborate with frontend developers to integrate APIs
+• Participate in code reviews and provide constructive feedback
+• Debug and resolve technical issues in production environments
+• Stay updated with latest Python and AWS technologies
+
+WHAT WE OFFER
+• Competitive salary and equity compensation
+• Comprehensive health, dental, and vision insurance
+• Flexible remote work options
+• Professional development and training budget
+• Collaborative and innovative work environment
+• Latest technology and tools
+• Unlimited PTO policy
+• 401(k) with company match
+
+ABOUT US
+Tech Solutions Inc. is a fast-growing SaaS company specializing in AI-powered business solutions. Our platform helps thousands of companies automate their workflows and make data-driven decisions. We value innovation, collaboration, and continuous learning.
+
+TO APPLY
+Please submit your resume along with a cover letter explaining your interest in the role and relevant experience. Include links to your GitHub profile and any relevant projects or portfolios.
+
+We are an equal opportunity employer and value diversity at our company. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status.
+
+
+
+
+
+

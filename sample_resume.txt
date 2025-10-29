@@ -1,0 +1,78 @@
+John Doe
+john.doe@email.com | (555) 123-4567 | linkedin.com/in/johndoe
+
+EDUCATION
+Bachelor of Science in Computer Science
+University of Technology | 2020-2024
+GPA: 3.8/4.0
+
+Relevant Coursework: Data Structures, Algorithms, Machine Learning, Cloud Computing, Database Systems
+
+TECHNICAL SKILLS
+Programming Languages: Python, JavaScript, Java, C++, SQL
+Web Technologies: React, Node.js, Flask, Django, Express.js, HTML, CSS
+Cloud & DevOps: AWS (Lambda, S3, DynamoDB, EC2), Docker, Kubernetes, Jenkins, CI/CD
+Data Science & ML: Machine Learning, NLP, TensorFlow, PyTorch, scikit-learn, Pandas, NumPy
+Databases: PostgreSQL, MongoDB, MySQL, Redis, DynamoDB
+Tools & Others: Git, GitHub, Linux, Bash, REST APIs, GraphQL, Agile/Scrum
+
+PROFESSIONAL EXPERIENCE
+
+Software Engineering Intern
+Tech Innovations Inc. | San Francisco, CA | June 2023 - August 2023
+• Developed RESTful APIs using Flask and Python, serving 10,000+ daily requests with 99.9% uptime
+• Implemented machine learning models for text classification achieving 92% accuracy using scikit-learn
+• Built serverless functions using AWS Lambda and integrated with S3 for file storage
+• Collaborated with cross-functional team of 8 engineers using Agile methodologies and Git workflows
+• Reduced API response time by 40% through query optimization and caching with Redis
+
+Backend Developer (Part-time)
+StartupXYZ | Remote | January 2023 - May 2023
+• Designed and implemented microservices architecture using Node.js and Express
+• Deployed containerized applications on AWS ECS with Docker and automated CI/CD pipelines
+• Integrated third-party APIs including Stripe for payment processing and SendGrid for emails
+• Wrote comprehensive unit tests achieving 85% code coverage using Jest
+• Mentored 2 junior developers on best practices for REST API development
+
+PROJECTS
+
+Serverless Resume Analyzer | Python, AWS Lambda, React | Current
+• Built cloud-based resume analysis system using NLP techniques (TF-IDF, cosine similarity)
+• Implemented serverless architecture with AWS Lambda, S3, DynamoDB, and API Gateway
+• Created React frontend with modern UI/UX for file upload and result visualization
+• Achieved 85% accuracy in skill extraction and job matching using spaCy and scikit-learn
+• Processed and stored 500+ resume analyses with complete history tracking
+
+E-Commerce Platform | React, Node.js, MongoDB | 2023
+• Developed full-stack e-commerce application with user authentication and shopping cart
+• Implemented secure payment processing using Stripe API and JWT-based authentication
+• Built responsive frontend with React and Material-UI serving 1,000+ concurrent users
+• Deployed on AWS EC2 with automated deployment pipeline using GitHub Actions
+• Optimized database queries reducing page load time by 60%
+
+Real-Time Chat Application | WebSockets, Redis, Docker | 2022
+• Created real-time messaging app supporting 50+ simultaneous chat rooms
+• Implemented WebSocket connections with Socket.io for instant message delivery
+• Used Redis for session management and message caching for improved performance
+• Containerized application with Docker and deployed on Kubernetes cluster
+
+CERTIFICATIONS
+• AWS Certified Cloud Practitioner - Amazon Web Services (2023)
+• Machine Learning Specialization - Coursera (2023)
+• Full-Stack Web Development - Udemy (2022)
+
+ACHIEVEMENTS
+• Dean's List - All semesters (2020-2024)
+• First Place - University Hackathon (Built AI-powered study assistant in 24 hours)
+• Open Source Contributor - 50+ contributions to Python and JavaScript projects
+
+ADDITIONAL INFORMATION
+• Active member of Computer Science Club and AI/ML Research Group
+• Published technical blog posts on Medium with 5,000+ total views
+• Volunteer coding instructor teaching Python to high school students
+
+
+
+
+
+

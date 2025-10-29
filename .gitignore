@@ -1,0 +1,86 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Backend
+backend/uploads/
+backend/*.db
+backend/*.sqlite
+backend/*.sqlite3
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Frontend
+frontend/dist/
+frontend/build/
+frontend/.vite/
+
+# Environment & Secrets (NEVER commit these!)
+.env
+.env.local
+.env.*.local
+local.settings.json
+deployment-config.txt
+*.pem
+*.key
+*connection-string*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# OS
+Thumbs.db
+
+# Helper/Draft Documentation (keep locally, don't push)
+QUICKSTART.md
+AZURE_QUICKSTART.md
+AZURE_README.md
+AZURE_DEPLOYMENT.md
+DEPLOY_SIMPLE.md
+DEPLOY_NOW.md
+DEPLOY_SECURE.md
+DEPLOYMENT.md
+PROVING_ORIGINALITY.md
+START_HERE.md
+.github-files
+
+
+
+
+
+
