@@ -1,0 +1,16 @@
+[phases.setup]
+nixPkgs = ["python311"]
+
+[phases.install]
+cmds = [
+  "cd backend",
+  "pip install -r requirements.txt",
+  "python -m spacy download en_core_web_sm"
+]
+
+[phases.build]
+cmds = ["echo 'Build complete'"]
+
+[start]
+cmd = "cd backend && python app.py"
+
