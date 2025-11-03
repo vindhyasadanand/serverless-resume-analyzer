@@ -48,12 +48,12 @@ A cloud-based resume analysis system that intelligently matches resumes against 
 ## Tech Stack
 
 **Backend:**
-- Python 3.11+
-- Flask (REST API)
+- Python 3.11
+- Flask (REST API) / AWS Lambda
 - PyMuPDF (PDF parsing)
 - scikit-learn (TF-IDF, cosine similarity)
 - spaCy (NLP processing)
-- SQLite/PostgreSQL
+- SQLite (local) / DynamoDB (AWS)
 
 **Frontend:**
 - React 18
@@ -99,7 +99,8 @@ For detailed setup instructions, see [SETUP.md](SETUP.md)
 | Document | Description |
 |----------|-------------|
 | [README.md](README.md) | This file - project overview |
-| [SETUP.md](SETUP.md) | Detailed installation and setup |
+| [SETUP.md](SETUP.md) | Local development setup |
+| [AWS_DEPLOYMENT.md](AWS_DEPLOYMENT.md) | AWS deployment guide |
 | [ARCHITECTURE.md](ARCHITECTURE.md) | System architecture and design |
 | [PROJECT_REPORT.md](PROJECT_REPORT.md) | Complete academic report |
 | [ORIGINALITY_STATEMENT.md](ORIGINALITY_STATEMENT.md) | Proof of original work |
@@ -135,6 +136,9 @@ serverless_res_analyzer/
 │   │   └── services/         # API calls
 │   ├── package.json
 │   └── vite.config.js
+├── serverless.yml             # AWS Lambda configuration
+├── wsgi_handler.py            # Lambda function handler
+├── AWS_DEPLOYMENT.md          # Complete AWS deployment guide
 └── README.md
 ```
 
@@ -145,23 +149,23 @@ serverless_res_analyzer/
 - `GET /api/analysis/:id` - Get specific analysis
 - `DELETE /api/analysis/:id` - Delete analysis
 
-## ☁️ Cloud Deployment (Azure)
+## ☁️ Cloud Deployment (AWS)
 
-**We deployed to Microsoft Azure using Azure for Students ($100 free credit, no card required).**
+**We deployed to Amazon Web Services using AWS Free Tier.**
 
 **Our Live URLs:**
-- Frontend: [Your Azure Static Web App URL]
-- Backend API: [Your Azure Function App URL]
+- Frontend: [Your Frontend URL - after deployment]
+- Backend API: [Your API Gateway URL - after deployment]
 
-**Architecture:**
-- Azure Static Web Apps (Frontend hosting)
-- Azure Functions (Serverless backend)
-- Azure Cosmos DB (NoSQL database - free tier)
-- Azure Blob Storage (File storage)
+**AWS Architecture:**
+- **AWS Lambda** - Serverless backend compute
+- **Amazon API Gateway** - RESTful API endpoints
+- **Amazon DynamoDB** - NoSQL database (25GB free)
+- **Amazon S3** - Resume file storage (5GB free)
 
-**Cost:** $0/month with Azure for Students free tier
+**Cost:** $0/month within AWS Free Tier limits
 
-For deployment instructions, see [ARCHITECTURE.md](ARCHITECTURE.md) and [PROJECT_REPORT.md](PROJECT_REPORT.md).
+**Deployment Guide:** See [AWS_DEPLOYMENT.md](AWS_DEPLOYMENT.md) for complete instructions.
 
 ## 🆓 Alternative Deployment Options
 

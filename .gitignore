@@ -79,6 +79,15 @@ PROVING_ORIGINALITY.md
 START_HERE.md
 .github-files
 
+# Railway/Platform-specific configs (not needed for AWS)
+railway.json
+Procfile
+nixpacks.toml
+
+# Deployment artifacts
+.serverless/
+node_modules/
+
 
 
 
