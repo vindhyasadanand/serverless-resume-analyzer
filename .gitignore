@@ -87,6 +87,38 @@ nixpacks.toml
 # Deployment artifacts
 .serverless/
 node_modules/
+.serverlessignore
+.requirements.zip
+package.json
+package-lock.json
+
+# Python packages installed for Lambda (should not be committed)
+bin/
+blinker/
+blinker-1.9.0.dist-info/
+click/
+click-8.3.0.dist-info/
+docx/
+dotenv/
+flask/
+flask-3.0.0.dist-info/
+itsdangerous/
+itsdangerous-2.2.0.dist-info/
+jinja2/
+jinja2-3.1.6.dist-info/
+lxml/
+lxml-6.0.2.dist-info/
+markupsafe/
+markupsafe-3.0.3.dist-info/
+python_docx-1.1.0.dist-info/
+python_dotenv-1.0.0.dist-info/
+python_packages/
+serverless_wsgi-3.0.3.dist-info/
+typing_extensions-4.15.0.dist-info/
+typing_extensions.py
+werkzeug/
+werkzeug-3.0.1.dist-info/
+*.dist-info/
 
 
 

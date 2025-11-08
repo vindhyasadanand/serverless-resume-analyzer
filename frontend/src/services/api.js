@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001'
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://qhkubp0tt2.execute-api.us-east-1.amazonaws.com/dev'
 
 const api = axios.create({
   baseURL: API_BASE_URL,

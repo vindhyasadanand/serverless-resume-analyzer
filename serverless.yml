@@ -1,4 +1,5 @@
 service: resume-analyzer
+# Updated with custom wsgi_handler
 
 provider:
   name: aws
@@ -25,7 +26,33 @@ provider:
           Action:
             - s3:PutObject
             - s3:GetObject
-          Resource: "arn:aws:s3:::${self:service}-resumes-${self:provider.stage}/*"
+          Resource: "arn:aws:s3:::${self:service}-resumes-${self:provider.stage}-${aws:accountId}/*"
+
+package:
+  patterns:
+    - '!backend/**'
+    - '!frontend/**'
+    - '!node_modules/**'
+    - '!.git/**'
+    - '!.venv-lambda/**'
+    - '!python_packages/**'
+    - 'app.py'
+    - 'resume_parser.py'
+    - 'analyzer_simple.py'
+    - 'database.py'
+    - 'flask/**'
+    - 'werkzeug/**'
+    - 'jinja2/**'
+    - 'click/**'
+    - 'itsdangerous/**'
+    - 'markupsafe/**'
+    - 'blinker/**'
+    - 'dotenv/**'
+    - 'docx/**'
+    - 'lxml/**'
+    - 'serverless_wsgi.py'
+    - 'typing_extensions.py'
+    - '*.dist-info/**'
 
 functions:
   api:
@@ -57,20 +84,13 @@ resources:
     ResumesBucket:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: ${self:service}-resumes-${self:provider.stage}
+        BucketName: ${self:service}-resumes-${self:provider.stage}-${aws:accountId}
 
 plugins:
-  - serverless-python-requirements
   - serverless-wsgi
 
 custom:
   wsgi:
-    app: backend.app.app
+    app: app.app
     packRequirements: false
-  pythonRequirements:
-    dockerizePip: non-linux
-    zip: true
-    slim: true
-    strip: false
-    layer: true
 
