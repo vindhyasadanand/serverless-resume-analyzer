@@ -2,14 +2,14 @@
 
 **Project Group 20 - Cloud Computing Course**  
 **Team Members:** Keyur Nareshkumar Modi, Naveen John, Vindhya Sadanand Hegde  
-**Institution:** [Your University]
+**Institution:** University of Texas at San Antonio (UTSA)
 
 ## 🎯 Overview
 
 A cloud-based resume analysis system that intelligently matches resumes against job descriptions using advanced NLP techniques. Our system employs TF-IDF vectorization and cosine similarity to produce accurate compatibility scores, helping both recruiters and job seekers.
 
-**Live Demo:** [Add your Azure URL here after deployment]  
-**Video Demo:** [Add YouTube link if you create one]
+**Live Demo:** https://marvelous-hummingbird-d08dde.netlify.app  
+**Video Demo:** https://utsa.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=bee9ec8e-a22d-4a11-bab6-b3a501291ddc
 
 ## Features
 
@@ -49,11 +49,12 @@ A cloud-based resume analysis system that intelligently matches resumes against 
 
 **Backend:**
 - Python 3.11
-- Flask (REST API) / AWS Lambda
-- PyMuPDF (PDF parsing)
-- scikit-learn (TF-IDF, cosine similarity)
-- spaCy (NLP processing)
-- SQLite (local) / DynamoDB (AWS)
+- Flask 3.1.2 (REST API)
+- Flask-CORS 6.0.1
+- PyMuPDF 1.26.6 (PDF parsing)
+- python-docx 1.2.0 (DOCX parsing)
+- SQLite (database)
+- AWS Elastic Beanstalk (deployment)
 
 **Frontend:**
 - React 18
@@ -149,21 +150,24 @@ serverless_res_analyzer/
 - `GET /api/analysis/:id` - Get specific analysis
 - `DELETE /api/analysis/:id` - Delete analysis
 
-## ☁️ Cloud Deployment (AWS)
+## ☁️ Cloud Deployment
 
-**We deployed to Amazon Web Services using AWS Free Tier.**
+**Our Live Deployment:**
+- **Frontend:** https://marvelous-hummingbird-d08dde.netlify.app (Netlify)
+- **Backend API:** http://resume-analyze-env.eba-mvb6z68r.us-east-1.elasticbeanstalk.com (AWS Elastic Beanstalk)
 
-**Our Live URLs:**
-- Frontend: [Your Frontend URL - after deployment]
-- Backend API: [Your API Gateway URL - after deployment]
+**Cloud Architecture:**
+- **AWS Elastic Beanstalk** - Python 3.11 runtime, auto-scaling, load balancing
+- **Netlify** - Static site hosting with CDN and HTTPS
+- **SQLite** - Database stored in /tmp (Elastic Beanstalk writable directory)
 
-**AWS Architecture:**
-- **AWS Lambda** - Serverless backend compute
-- **Amazon API Gateway** - RESTful API endpoints
-- **Amazon DynamoDB** - NoSQL database (25GB free)
-- **Amazon S3** - Resume file storage (5GB free)
+**Deployment Features:**
+- Auto-scaling based on traffic
+- Health monitoring
+- Zero-downtime rolling updates
+- CORS-enabled API communication
 
-**Cost:** $0/month within AWS Free Tier limits
+**Cost:** Minimal within AWS Free Tier and Netlify free plan
 
 **Deployment Guide:** See [AWS_DEPLOYMENT.md](AWS_DEPLOYMENT.md) for complete instructions.
 
@@ -201,7 +205,6 @@ MIT License - Academic Project
 ## 🎓 Academic Information
 
 **Course:** Cloud Computing  
-**Semester:** [Add semester]  
 **Grade Target:** Demonstrate understanding of serverless architecture and NLP
 
 ### Learning Outcomes Demonstrated:
