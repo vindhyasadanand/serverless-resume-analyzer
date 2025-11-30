@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/api/*"
+  to = "http://resume-analyze-env.eba-mvb6z68r.us-east-1.elasticbeanstalk.com/:splat"
+  status = 200
+  force = true

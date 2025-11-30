@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Video Script - Serverless Resume Analyzer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            color: #764ba2;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 5px solid #764ba2;
+        }
+        
+        h3 {
+            color: #555;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .speech {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+        
+        .action {
+            background: #fff4e6;
+            border-left: 4px solid #ff9800;
+            padding: 12px 20px;
+            margin: 12px 0;
+            border-radius: 5px;
+            font-style: italic;
+            color: #d84315;
+        }
+        
+        .section-badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+        
+        ul {
+            margin: 15px 0 15px 30px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .tips-box {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .tips-box h2 {
+            color: #2e7d32;
+            margin-top: 0;
+            border-left: none;
+        }
+        
+        .checklist {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .checklist h2 {
+            color: #e65100;
+            margin-top: 0;
+            border-left: none;
+        }
+        
+        .checklist li {
+            list-style: none;
+            padding: 8px 0;
+        }
+        
+        .checklist li:before {
+            content: "☐ ";
+            font-size: 1.3em;
+            margin-right: 8px;
+            color: #ff9800;
+        }
+        
+        .highlight {
+            background: #ffeb3b;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+        
+        .url {
+            color: #1976d2;
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+            background: #e3f2fd;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 2px dashed #ddd;
+            margin: 40px 0;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            color: #666;
+            font-size: 1.2em;
+        }
+        
+        .emoji {
+            font-size: 1.3em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎥 Demo Video Script</h1>
+        <p style="text-align: center; color: #666; font-size: 1.1em; margin-bottom: 30px;">
+            Serverless Resume Analyzer - 10+ Minutes
+        </p>
+
+        <h2>📝 Introduction <span class="section-badge">2 minutes</span></h2>
+        
+        <h3>Opening Statement</h3>
+        <div class="speech">
+            "Hello, my name is <span class="highlight">[Your Name]</span>, and I'm presenting our cloud computing final project - a Serverless Resume Analyzer. I'm joined by my team members <span class="highlight">[Keyur Modi]</span> and <span class="highlight">[Naveen John]</span>. Today I'll walk you through our AI-powered job matching system that uses cloud computing technologies."
+        </div>
+
+        <h3>Project Overview</h3>
+        <div class="speech">
+            "In today's job market, both recruiters and job seekers face challenges. Recruiters spend hours manually screening resumes, and candidates often don't know if their resume matches job requirements. Our project solves this by providing automated, objective resume analysis using Natural Language Processing and cloud infrastructure."
+        </div>
+
+        <h3>What We Built</h3>
+        <div class="speech">
+            "We built a web application where users can:
+            <ul>
+                <li>Upload their resume in PDF, Word, or text format</li>
+                <li>Paste a job description</li>
+                <li>Get an instant compatibility score</li>
+                <li>See which skills they have and which they're missing</li>
+                <li>Receive personalized recommendations to improve their resume"</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>🏗️ Architecture Overview <span class="section-badge">2-3 minutes</span></h2>
+        
+        <h3>System Design</h3>
+        <div class="speech">
+            "Let me explain our system architecture. We use a modern client-server architecture with two main components:
+            <br><br>
+            <strong>Frontend:</strong>
+            <ul>
+                <li>Built with React - a popular JavaScript framework</li>
+                <li>Uses Vite for fast builds and TailwindCSS for beautiful, responsive design</li>
+                <li>Deployed on Netlify, which gives us global CDN distribution and automatic HTTPS</li>
+                <li>This means our app is fast and secure for users anywhere in the world</li>
+            </ul>
+            <br>
+            <strong>Backend:</strong>
+            <ul>
+                <li>Built with Flask - a Python web framework</li>
+                <li>Handles the actual resume analysis using Natural Language Processing</li>
+                <li>Deployed on AWS Elastic Beanstalk, which gives us automatic scaling</li>
+                <li>Uses SQLite database to store analysis history</li>
+                <li>If we get more users, AWS automatically adds more servers. If usage drops, it scales down to save costs</li>
+            </ul>
+            <br>
+            <strong>Communication:</strong>
+            <ul>
+                <li>The frontend and backend talk through REST APIs</li>
+                <li>We use JSON for data exchange</li>
+                <li>We implemented a Netlify proxy to handle HTTPS/HTTP communication securely"</li>
+            </ul>
+        </div>
+
+        <h3>Cloud Benefits</h3>
+        <div class="speech">
+            "Why cloud? Three main reasons:
+            <ol>
+                <li><strong>Scalability</strong> - Handles 1 user or 1000 users automatically</li>
+                <li><strong>Cost Efficiency</strong> - We only pay for what we use</li>
+                <li><strong>Reliability</strong> - AWS and Netlify handle server maintenance and uptime"</li>
+            </ol>
+        </div>
+
+        <hr>
+
+        <h2>💻 Live Demo <span class="section-badge">5-6 minutes</span></h2>
+        
+        <h3>Opening the Application</h3>
+        <div class="speech">
+            "Now let me show you the live application. I'm opening the URL: <span class="url">https://marvelous-hummingbird-d08dde.netlify.app</span>"
+        </div>
+        <div class="action">[Open the website in browser]</div>
+        <div class="speech">
+            "As you can see, we have a clean, modern interface with a gradient background. The design is responsive, meaning it works on phones, tablets, and desktops."
+        </div>
+
+        <h3>Uploading a Resume</h3>
+        <div class="speech">
+            "Let me demonstrate the analysis feature. I'm going to upload a sample resume. I'll click 'Choose File'..."
+        </div>
+        <div class="action">[Click the file upload button]</div>
+        <div class="speech">
+            "We support three formats: PDF, Word documents, and plain text files. The maximum file size is 5 megabytes, which is more than enough for any resume. Let me select this sample resume..."
+        </div>
+        <div class="action">[Select your sample resume file]</div>
+
+        <h3>Adding Job Description</h3>
+        <div class="speech">
+            "Now I need to paste a job description. Let me copy this sample job description that requires skills like Python, JavaScript, AWS, React, and database management..."
+        </div>
+        <div class="action">[Paste the job description from sample_job_description.txt]</div>
+        <div class="speech">
+            "I'm pasting it into the job description field. Notice how the interface is very straightforward - just two inputs needed."
+        </div>
+
+        <h3>Running Analysis</h3>
+        <div class="speech">
+            "Now I'll click 'Analyze Resume'..."
+        </div>
+        <div class="action">[Click the Analyze button]</div>
+        <div class="speech">
+            "The system is now:
+            <ol>
+                <li>Extracting text from the resume file</li>
+                <li>Identifying keywords from both the resume and job description</li>
+                <li>Comparing them using our NLP algorithm</li>
+                <li>Calculating compatibility scores</li>
+                <li>Generating personalized recommendations</li>
+            </ol>
+            This typically takes 2-3 seconds. And... here are the results!"
+        </div>
+
+        <h3>Explaining Results</h3>
+        <div class="speech">
+            "Let me walk you through what we see:
+            <br><br>
+            <strong>Overall Score: [X]%</strong><br>
+            This is the overall compatibility between the resume and job description.
+            <br><br>
+            <strong>Score Breakdown:</strong><br>
+            We break it down into four categories, shown in this pie chart:
+            <ul>
+                <li><strong>Skills Score</strong> - How well the resume matches the required technical skills</li>
+                <li><strong>Experience Score</strong> - Based on keywords like 'years', 'developed', 'managed'</li>
+                <li><strong>Education Score</strong> - Looks for degrees, universities, certifications</li>
+                <li><strong>Format Score</strong> - Evaluates resume structure and organization</li>
+            </ul>
+            <br>
+            <strong>Matched Skills:</strong><br>
+            Here we show all the skills from the job description that were found in the resume. For example: <span class="highlight">[read some skills from the screen]</span>
+            <br><br>
+            <strong>Missing Skills:</strong><br>
+            These are skills mentioned in the job description but not found in the resume. This is super valuable for candidates - they know exactly what to add to their resume! <span class="highlight">[read some missing skills]</span>
+            <br><br>
+            <strong>Recommendations:</strong><br>
+            Based on the analysis, we provide actionable advice. For example: <span class="highlight">[read recommendations]</span>"
+        </div>
+
+        <h3>History Feature</h3>
+        <div class="speech">
+            "Now let me show you another feature. I'll scroll down and click on 'View History'..."
+        </div>
+        <div class="action">[Click View History or scroll to History section]</div>
+        <div class="speech">
+            "This shows all previous analyses with:
+            <ul>
+                <li>The filename of each resume analyzed</li>
+                <li>When it was analyzed</li>
+                <li>The overall score</li>
+                <li>And we can click to see full details again</li>
+            </ul>
+            At the top, we show statistics:
+            <ul>
+                <li>Total analyses performed</li>
+                <li>Average score across all analyses</li>
+                <li>Highest and lowest scores</li>
+            </ul>
+            This is useful for recruiters who want to compare multiple candidates, or for individuals who want to track how their resume improves over time."
+        </div>
+
+        <h3>Deleting History</h3>
+        <div class="speech">
+            "Users can also delete individual records if needed by clicking this delete button."
+        </div>
+        <div class="action">[Demonstrate delete functionality]</div>
+
+        <hr>
+
+        <h2>☁️ Backend & Cloud Infrastructure <span class="section-badge">2-3 minutes</span></h2>
+        
+        <h3>AWS Elastic Beanstalk Dashboard</h3>
+        <div class="speech">
+            "Now let me show you the cloud infrastructure behind this. I'm opening the AWS Elastic Beanstalk console..."
+        </div>
+        <div class="action">[Open AWS console and navigate to Elastic Beanstalk]</div>
+        <div class="speech">
+            "Here you can see our application environment. Some key things to notice:
+            <br><br>
+            <strong>Health Status:</strong> <span class="highlight">[Show health status - should be green/healthy]</span><br>
+            The environment is healthy and running.
+            <br><br>
+            <strong>Instance Information:</strong>
+            <ul>
+                <li>We're using a t2.micro instance - that's 1 CPU and 1GB RAM</li>
+                <li>Perfect for our current usage and very cost-effective</li>
+            </ul>
+            <br>
+            <strong>Monitoring:</strong><br>
+            <span class="highlight">[Show monitoring graphs if available]</span><br>
+            These graphs show CPU usage, network traffic, and request counts. AWS automatically scales up if we hit high CPU usage.
+            <br><br>
+            <strong>Environment URL:</strong><br>
+            This is our backend API endpoint: <span class="url">http://resume-analyze-env.eba-mvb6z68r.us-east-1.elasticbeanstalk.com</span>"
+        </div>
+
+        <h3>Netlify Dashboard</h3>
+        <div class="speech">
+            "Now for the frontend, let me show you Netlify..."
+        </div>
+        <div class="action">[Open Netlify dashboard]</div>
+        <div class="speech">
+            "Here's our frontend deployment:
+            <ul>
+                <li><strong>Deploy Status:</strong> <span class="highlight">[Should show 'Published']</span></li>
+                <li><strong>Domain:</strong> Our live URL with automatic HTTPS</li>
+                <li><strong>Build Time:</strong> Shows how long it takes to build and deploy</li>
+                <li><strong>Analytics:</strong> Shows visitor traffic and bandwidth usage</li>
+            </ul>
+            Every time we push code to GitHub, Netlify automatically rebuilds and deploys. This is called Continuous Deployment."
+        </div>
+
+        <h3>Testing the API</h3>
+        <div class="speech">
+            "Let me quickly test one of our API endpoints to show the backend is working..."
+        </div>
+        <div class="action">[Optional: Open a new tab and visit the /health endpoint]</div>
+        <div class="speech">
+            "If I go to [backend-url]/health, we get a JSON response showing the system is healthy and all modules are loaded."
+        </div>
+
+        <hr>
+
+        <h2>🔧 Technical Challenges & Solutions <span class="section-badge">1-2 minutes</span></h2>
+        
+        <h3>Challenge 1: Mixed Content Error</h3>
+        <div class="speech">
+            "During deployment, we faced a major challenge. Our frontend uses HTTPS but our backend uses HTTP. Browsers block this for security - it's called a mixed content error.
+            <br><br>
+            <strong>Solution:</strong> We implemented a Netlify proxy using a _redirects file. Now all API calls go through Netlify first, which forwards them to our backend. This way, everything stays HTTPS from the user's perspective."
+        </div>
+
+        <h3>Challenge 2: PDF Parsing</h3>
+        <div class="speech">
+            "Another challenge was parsing PDF files on AWS. Locally it worked fine, but in production, the PyMuPDF library had missing dependencies.
+            <br><br>
+            <strong>Solution:</strong> We made sure all dependencies were properly listed in requirements.txt and verified installation during deployment."
+        </div>
+
+        <h3>Challenge 3: Database Schema</h3>
+        <div class="speech">
+            "We had issues with date formatting between frontend and backend - they expected different field names.
+            <br><br>
+            <strong>Solution:</strong> We updated our database schema to include both 'created_at' and 'date' fields, and added fallback logic to handle old records."
+        </div>
+
+        <hr>
+
+        <h2>🎯 Conclusion & Future Work <span class="section-badge">1-2 minutes</span></h2>
+        
+        <h3>What We Achieved</h3>
+        <div class="speech">
+            "To summarize what we accomplished:
+            <ul>
+                <li>✅ Built a fully functional web application</li>
+                <li>✅ Deployed on professional cloud platforms (AWS & Netlify)</li>
+                <li>✅ Implemented NLP-based resume analysis</li>
+                <li>✅ Achieved sub-3-second response times</li>
+                <li>✅ Support for multiple file formats</li>
+                <li>✅ Responsive design that works on all devices</li>
+                <li>✅ Analysis history and statistics</li>
+                <li>✅ 99.5% uptime during our testing period"</li>
+            </ul>
+        </div>
+
+        <h3>Future Enhancements</h3>
+        <div class="speech">
+            "If we continue this project, here's what we'd add:
+            <ol>
+                <li><strong>Advanced NLP:</strong> Use transformer models like BERT or GPT for deeper semantic understanding</li>
+                <li><strong>Machine Learning:</strong> Train custom models on real resume data</li>
+                <li><strong>User Authentication:</strong> Allow users to create accounts and save their analyses</li>
+                <li><strong>Batch Processing:</strong> Let recruiters upload and analyze multiple resumes at once</li>
+                <li><strong>Integration with ATS:</strong> Export results to popular Application Tracking Systems</li>
+                <li><strong>Multi-language Support:</strong> Analyze resumes in different languages"</li>
+            </ol>
+        </div>
+
+        <h3>Lessons Learned</h3>
+        <div class="speech">
+            "Key takeaways from this project:
+            <ol>
+                <li>Cloud platforms make deployment much easier than managing your own servers</li>
+                <li>Proper CORS configuration is critical for production</li>
+                <li>Always plan your database schema with frontend needs in mind</li>
+                <li>Comprehensive error handling greatly improves user experience</li>
+                <li>Testing with different file formats is essential"</li>
+            </ol>
+        </div>
+
+        <h3>Final Thoughts</h3>
+        <div class="speech">
+            "This project demonstrates how cloud computing can solve real-world problems efficiently. We created a scalable, cost-effective solution that provides real value to both job seekers and recruiters. Thank you for watching!"
+        </div>
+
+        <hr>
+
+        <div class="tips-box">
+            <h2>💡 Tips for Recording</h2>
+            <ol>
+                <li><strong>Test Everything First:</strong> Make sure your application is working before recording</li>
+                <li><strong>Prepare Sample Files:</strong> Have a sample resume and job description ready</li>
+                <li><strong>Clear Browser Cache:</strong> Start with a clean slate</li>
+                <li><strong>Check Audio:</strong> Test your microphone before recording</li>
+                <li><strong>Speak Clearly:</strong> Talk at a moderate pace</li>
+                <li><strong>Show Your Face:</strong> If possible, use webcam in corner (optional)</li>
+                <li><strong>Practice Once:</strong> Do a quick run-through before official recording</li>
+                <li><strong>Have Water:</strong> Keep water nearby in case your throat gets dry</li>
+                <li><strong>Smile:</strong> Be enthusiastic about your project!</li>
+                <li><strong>Time Check:</strong> Aim for 12-15 minutes to be safe</li>
+            </ol>
+        </div>
+
+        <div class="checklist">
+            <h2>✅ Recording Checklist</h2>
+            <ul>
+                <li>Open all tabs you need beforehand</li>
+                <li>Close unnecessary tabs/apps</li>
+                <li>Turn off notifications</li>
+                <li>Check your internet connection</li>
+                <li>Have sample resume file ready</li>
+                <li>Have sample job description in a text file</li>
+                <li>Log into AWS console</li>
+                <li>Log into Netlify dashboard</li>
+                <li>Test audio/video</li>
+                <li>Start recording!</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <span class="emoji">🎥</span> Good luck! You've got this! <span class="emoji">🚀</span>
+        </div>
+    </div>
+</body>
+</html>

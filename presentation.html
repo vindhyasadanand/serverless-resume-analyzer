@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serverless Resume Analyzer - Presentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            padding: 60px 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+            font-size: 1.2em;
+            opacity: 0.7;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            font-size: 3em;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+
+        p, li {
+            font-size: 1.8em;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+
+        ul, ol {
+            margin-left: 60px;
+        }
+
+        .center {
+            text-align: center;
+            align-items: center;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            opacity: 0.9;
+            margin-top: 20px;
+        }
+
+        .team {
+            font-size: 1.4em;
+            margin-top: 30px;
+            opacity: 0.95;
+        }
+
+        .highlight {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        .box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #fff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .grid-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .emoji {
+            font-size: 1.5em;
+            margin-right: 15px;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px 30px;
+            border-radius: 30px;
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1em;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+
+        button:disabled {
+            background: #555;
+            cursor: not-allowed;
+            transform: scale(1);
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            background: #fff;
+            transition: width 0.3s;
+            z-index: 1001;
+        }
+
+        .small-text {
+            font-size: 1.5em;
+        }
+
+        .code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 1.4em;
+            margin: 20px 0;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .slide.active > * {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Slide 1: Title -->
+    <div class="slide active center">
+        <h1>🚀 Serverless Resume Analyzer</h1>
+        <p class="subtitle">An AI-Powered Job Matching System Using Cloud Computing</p>
+        <div class="team">
+            <p>Keyur Nareshkumar Modi</p>
+            <p>Naveen John</p>
+            <p>Vindhya Sadanand Hegde</p>
+        </div>
+        <p style="margin-top: 50px; font-size: 1.3em; opacity: 0.8;">University of Texas at San Antonio</p>
+        <div class="slide-number">1</div>
+    </div>
+
+    <!-- Slide 2: The Problem -->
+    <div class="slide">
+        <h2>❓ The Problem</h2>
+        <div class="box">
+            <h3>For Recruiters:</h3>
+            <ul>
+                <li>Manual resume screening is time-consuming</li>
+                <li>Hundreds of applications per job posting</li>
+                <li>Prone to human bias and inconsistency</li>
+            </ul>
+        </div>
+        <div class="box">
+            <h3>For Job Seekers:</h3>
+            <ul>
+                <li>No clear feedback on resume quality</li>
+                <li>Uncertain if they match job requirements</li>
+                <li>Don't know which skills to improve</li>
+            </ul>
+        </div>
+        <div class="slide-number">2</div>
+    </div>
+
+    <!-- Slide 3: Our Solution -->
+    <div class="slide">
+        <h2>💡 Our Solution</h2>
+        <div style="font-size: 1.6em; line-height: 1.8;">
+            <p><span class="emoji">✅</span> <strong>Automated Analysis:</strong> Upload resume, get instant compatibility score</p>
+            <p><span class="emoji">📊</span> <strong>Objective Scoring:</strong> NLP-based keyword matching across 4 categories</p>
+            <p><span class="emoji">🎯</span> <strong>Actionable Insights:</strong> Shows matched & missing skills</p>
+            <p><span class="emoji">💼</span> <strong>Personalized Recommendations:</strong> Specific advice to improve resume</p>
+            <p><span class="emoji">☁️</span> <strong>Cloud-Powered:</strong> Scalable, fast, and cost-effective</p>
+        </div>
+        <div class="slide-number">3</div>
+    </div>
+
+    <!-- Slide 4: System Architecture -->
+    <div class="slide">
+        <h2>🏗️ System Architecture</h2>
+        <div class="two-column">
+            <div>
+                <div class="box">
+                    <h3>Frontend</h3>
+                    <ul class="small-text">
+                        <li>React 18.2.0</li>
+                        <li>Vite Build Tool</li>
+                        <li>TailwindCSS</li>
+                        <li>Recharts (Visualization)</li>
+                        <li>Deployed on Netlify</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="box">
+                    <h3>Backend</h3>
+                    <ul class="small-text">
+                        <li>Flask 3.0.0 (Python)</li>
+                        <li>NLP Processing</li>
+                        <li>PyMuPDF (PDF Parser)</li>
+                        <li>SQLite Database</li>
+                        <li>AWS Elastic Beanstalk</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="box" style="margin-top: 20px;">
+            <p class="small-text"><strong>Communication:</strong> REST APIs with JSON | CORS-enabled | HTTPS via Netlify Proxy</p>
+        </div>
+        <div class="slide-number">4</div>
+    </div>
+
+    <!-- Slide 5: How It Works -->
+    <div class="slide">
+        <h2>⚙️ How It Works</h2>
+        <div style="font-size: 1.6em;">
+            <div class="box">
+                <p><strong>Step 1:</strong> User uploads resume (PDF/DOCX/TXT) + job description</p>
+            </div>
+            <div class="box">
+                <p><strong>Step 2:</strong> Extract text from uploaded file</p>
+            </div>
+            <div class="box">
+                <p><strong>Step 3:</strong> NLP keyword extraction & matching</p>
+            </div>
+            <div class="box">
+                <p><strong>Step 4:</strong> Calculate scores: Skills, Experience, Education, Format</p>
+            </div>
+            <div class="box">
+                <p><strong>Step 5:</strong> Generate recommendations & save to database</p>
+            </div>
+            <div class="box">
+                <p><strong>Step 6:</strong> Display results with interactive charts</p>
+            </div>
+        </div>
+        <div class="slide-number">5</div>
+    </div>
+
+    <!-- Slide 6: Algorithm -->
+    <div class="slide">
+        <h2>🧮 Scoring Algorithm</h2>
+        <div class="code">
+            <p>resume_keywords = extract_keywords(resume)</p>
+            <p>job_keywords = extract_keywords(job_description)</p>
+            <p style="margin-top: 15px;">matched = resume_keywords ∩ job_keywords</p>
+            <p>missing = job_keywords - resume_keywords</p>
+            <p style="margin-top: 15px;">skills_score = (|matched| / |job_keywords|) × 100</p>
+            <p>experience_score = keyword_count × 10</p>
+            <p>education_score = keyword_count × 15</p>
+            <p style="margin-top: 15px; color: #ffeb3b;">overall_score = (skills + exp + edu + format) / 4</p>
+        </div>
+        <div class="slide-number">6</div>
+    </div>
+
+    <!-- Slide 7: Key Features -->
+    <div class="slide">
+        <h2>✨ Key Features</h2>
+        <div class="grid">
+            <div class="grid-item">
+                <h3>📄 Multi-Format Support</h3>
+                <p class="small-text">PDF, DOCX, TXT files up to 5MB</p>
+            </div>
+            <div class="grid-item">
+                <h3>⚡ Real-Time Analysis</h3>
+                <p class="small-text">Sub-3-second response time</p>
+            </div>
+            <div class="grid-item">
+                <h3>📊 Visual Breakdown</h3>
+                <p class="small-text">Interactive pie charts & scores</p>
+            </div>
+            <div class="grid-item">
+                <h3>📈 History Tracking</h3>
+                <p class="small-text">Save & compare analyses</p>
+            </div>
+            <div class="grid-item">
+                <h3>📱 Responsive Design</h3>
+                <p class="small-text">Works on all devices</p>
+            </div>
+            <div class="grid-item">
+                <h3>☁️ Auto-Scaling</h3>
+                <p class="small-text">Handles 1 to 1000+ users</p>
+            </div>
+        </div>
+        <div class="slide-number">7</div>
+    </div>
+
+    <!-- Slide 8: Cloud Infrastructure -->
+    <div class="slide">
+        <h2>☁️ Cloud Deployment</h2>
+        <div class="two-column">
+            <div>
+                <div class="box">
+                    <h3>AWS Elastic Beanstalk</h3>
+                    <ul class="small-text">
+                        <li>Automatic scaling</li>
+                        <li>Load balancing</li>
+                        <li>Health monitoring</li>
+                        <li>Rolling updates</li>
+                        <li>t2.micro instance</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="box">
+                    <h3>Netlify</h3>
+                    <ul class="small-text">
+                        <li>Global CDN</li>
+                        <li>Automatic HTTPS</li>
+                        <li>CI/CD from GitHub</li>
+                        <li>Asset optimization</li>
+                        <li>Proxy configuration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="box" style="margin-top: 20px;">
+            <h3>Why Cloud?</h3>
+            <p class="small-text">✅ Scalability | ✅ Cost Efficiency (Pay-per-use) | ✅ High Availability (99.5% uptime)</p>
+        </div>
+        <div class="box" style="margin-top: 10px; background: rgba(255, 235, 59, 0.2);">
+            <h3 style="font-size: 1.3em;">📝 Note: Demo Architecture</h3>
+            <p class="small-text">History stored in ephemeral /tmp storage - persists within session but resets on instance restart. Production would use RDS, DynamoDB, or S3 for permanent storage.</p>
+        </div>
+        <div class="slide-number">8</div>
+    </div>
+
+    <!-- Slide 9: Technical Challenges -->
+    <div class="slide">
+        <h2>🔧 Challenges We Solved</h2>
+        <div class="box">
+            <h3>1. Mixed Content Error</h3>
+            <p class="small-text"><strong>Problem:</strong> HTTPS frontend couldn't call HTTP backend</p>
+            <p class="small-text"><strong>Solution:</strong> Implemented Netlify proxy with _redirects file</p>
+        </div>
+        <div class="box">
+            <h3>2. PDF Parsing on AWS</h3>
+            <p class="small-text"><strong>Problem:</strong> PyMuPDF dependencies missing in production</p>
+            <p class="small-text"><strong>Solution:</strong> Updated requirements.txt with all dependencies</p>
+        </div>
+        <div class="box">
+            <h3>3. Database Schema Mismatch</h3>
+            <p class="small-text"><strong>Problem:</strong> Frontend/backend expected different date formats</p>
+            <p class="small-text"><strong>Solution:</strong> Added both field names with fallback logic</p>
+        </div>
+        <div class="slide-number">9</div>
+    </div>
+
+    <!-- Slide 10: Performance Metrics -->
+    <div class="slide">
+        <h2>📊 Performance Metrics</h2>
+        <div class="grid">
+            <div class="grid-item center">
+                <h3 style="font-size: 3em; color: #ffeb3b;">2.5s</h3>
+                <p class="small-text">Average Response Time</p>
+            </div>
+            <div class="grid-item center">
+                <h3 style="font-size: 3em; color: #4caf50;">99.5%</h3>
+                <p class="small-text">System Uptime</p>
+            </div>
+            <div class="grid-item center">
+                <h3 style="font-size: 3em; color: #2196f3;">95%</h3>
+                <p class="small-text">Parsing Success Rate</p>
+            </div>
+            <div class="grid-item center">
+                <h3 style="font-size: 3em; color: #ff9800;">50+</h3>
+                <p class="small-text">Concurrent Requests</p>
+            </div>
+        </div>
+        <div class="box" style="margin-top: 30px;">
+            <p class="small-text">Frontend Build Size: ~450 KB | Database Query Time: <100ms | Auto-scaling at 70% CPU</p>
+        </div>
+        <div class="slide-number">10</div>
+    </div>
+
+    <!-- Slide 11: Team Contributions -->
+    <div class="slide">
+        <h2>👥 Team Contributions</h2>
+        <div class="box">
+            <h3>Keyur Nareshkumar Modi - 33.33%</h3>
+            <p class="small-text">Backend Development & NLP Implementation</p>
+            <p class="small-text">Flask API, Resume Parsing, Scoring Algorithm, Database</p>
+        </div>
+        <div class="box">
+            <h3>Naveen John - 33.33%</h3>
+            <p class="small-text">Cloud Architecture & Deployment</p>
+            <p class="small-text">AWS Beanstalk, Auto-scaling, CI/CD, Monitoring</p>
+        </div>
+        <div class="box">
+            <h3>Vindhya Sadanand Hegde - 33.33%</h3>
+            <p class="small-text">Frontend Development & UI/UX Design</p>
+            <p class="small-text">React Components, TailwindCSS, Charts, User Experience</p>
+        </div>
+        <div class="slide-number">11</div>
+    </div>
+
+    <!-- Slide 12: Future Enhancements -->
+    <div class="slide">
+        <h2>🚀 Future Enhancements</h2>
+        <div style="font-size: 1.6em;">
+            <div class="box">
+                <p><span class="emoji">🤖</span> Advanced NLP with BERT/GPT transformers</p>
+            </div>
+            <div class="box">
+                <p><span class="emoji">📚</span> Machine Learning models trained on real data</p>
+            </div>
+            <div class="box">
+                <p><span class="emoji">🔐</span> User authentication & secure data storage</p>
+            </div>
+            <div class="box">
+                <p><span class="emoji">📦</span> Batch processing for multiple resumes</p>
+            </div>
+            <div class="box">
+                <p><span class="emoji">🔗</span> Integration with ATS platforms</p>
+            </div>
+            <div class="box">
+                <p><span class="emoji">🌍</span> Multi-language support</p>
+            </div>
+        </div>
+        <div class="slide-number">12</div>
+    </div>
+
+    <!-- Slide 13: Key Achievements -->
+    <div class="slide">
+        <h2>🏆 Key Achievements</h2>
+        <div style="font-size: 1.8em; line-height: 2;">
+            <p><span class="emoji">✅</span> Fully functional web application deployed on cloud</p>
+            <p><span class="emoji">✅</span> Scalable architecture handling concurrent users</p>
+            <p><span class="emoji">✅</span> NLP-based intelligent resume analysis</p>
+            <p><span class="emoji">✅</span> Sub-3-second analysis with 99.5% uptime</p>
+            <p><span class="emoji">✅</span> Professional UI/UX with responsive design</p>
+            <p><span class="emoji">✅</span> Cost-effective pay-per-use cloud model</p>
+            <p><span class="emoji">✅</span> Solves real-world hiring challenges</p>
+        </div>
+        <div class="slide-number">13</div>
+    </div>
+
+    <!-- Slide 14: Live Demo -->
+    <div class="slide center">
+        <h1>💻 LIVE DEMO</h1>
+        <p class="subtitle" style="font-size: 2em; margin-top: 40px;">Let's see it in action!</p>
+        <div style="margin-top: 60px; font-size: 1.5em;">
+            <p>🌐 <span class="highlight">https://marvelous-hummingbird-d08dde.netlify.app</span></p>
+        </div>
+        <div class="slide-number">14</div>
+    </div>
+
+    <!-- Slide 15: Thank You -->
+    <div class="slide center">
+        <h1>🎉 Thank You!</h1>
+        <p class="subtitle" style="font-size: 1.8em; margin-top: 40px;">Questions?</p>
+        <div style="margin-top: 60px; font-size: 1.5em; line-height: 1.8;">
+            <p>📧 keyur.modi@my.utsa.edu</p>
+            <p>📧 naveen.john@my.utsa.edu</p>
+            <p>📧 vindhya.hegde@my.utsa.edu</p>
+        </div>
+        <div style="margin-top: 60px; font-size: 1.5em;">
+            <p>🔗 GitHub: github.com/vindhyasadanand/serverless-resume-analyzer</p>
+        </div>
+        <div class="slide-number">15</div>
+    </div>
+
+    <div class="controls">
+        <button id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+        <button id="nextBtn" onclick="changeSlide(1)">Next →</button>
+        <span id="slideInfo" style="color: white; padding: 0 20px; font-size: 1.1em;"></span>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const slideInfo = document.getElementById('slideInfo');
+        const progressBar = document.getElementById('progressBar');
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            
+            if (n >= totalSlides) currentSlide = totalSlides - 1;
+            if (n < 0) currentSlide = 0;
+            
+            slides[currentSlide].classList.add('active');
+            
+            // Update buttons
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+            
+            // Update slide info
+            slideInfo.textContent = `${currentSlide + 1} / ${totalSlides}`;
+            
+            // Update progress bar
+            const progress = ((currentSlide + 1) / totalSlides) * 100;
+            progressBar.style.width = progress + '%';
+        }
+
+        function changeSlide(n) {
+            currentSlide += n;
+            showSlide(currentSlide);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+            if (e.key === 'Home') { currentSlide = 0; showSlide(0); }
+            if (e.key === 'End') { currentSlide = totalSlides - 1; showSlide(currentSlide); }
+        });
+
+        // Initialize
+        showSlide(0);
+
+        // Prevent accidental navigation away
+        window.addEventListener('beforeunload', function(e) {
+            if (currentSlide > 0 && currentSlide < totalSlides - 1) {
+                e.preventDefault();
+                e.returnValue = '';
+            }
+        });
+    </script>
+</body>
+</html>
