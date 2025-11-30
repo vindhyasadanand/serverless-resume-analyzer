@@ -154,7 +154,7 @@ serverless_res_analyzer/
 
 **Our Live Deployment:**
 - **Frontend:** https://marvelous-hummingbird-d08dde.netlify.app (Netlify)
-- **Backend API:** http://resume-analyze-env.eba-mvb6z68r.us-east-1.elasticbeanstalk.com (AWS Elastic Beanstalk)
+- **Backend API:** http://resume-analyze-env.eba-mvb6z68r.us-east-1.elasticbeanstalk.com/health (AWS Elastic Beanstalk)
 
 **Cloud Architecture:**
 - **AWS Elastic Beanstalk** - Python 3.11 runtime, auto-scaling, load balancing
